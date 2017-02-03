@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+
+        <ol class="breadcrumb">
+            <li>
+                <a href="{% url 'cpdashboard:home' %}">Home</a>
+            </li>
+            <li class="active">
+                <strong>objective list</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-8">
+         {% load staticfiles %}
+        <h1 class="text-uppercase">Strategic Objectives</h1>
+        <!-- <img alt="image" class="img-circle img-responsive" src="{% static 'cpdashboard/Images/oilserv-logo.png' %}" /> -->
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInUp">
+
+
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>All objectives in the strategic plan</h5>
+                    {% if user.is_superuser %}
+                    <div class="ibox-tools">
+                        <a href="" class="btn btn-default btn-xs">Create new objective</a>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="ibox-content">
+                    <div class="row m-b-sm m-t-sm">
+                        <div class="col-md-1">
+                            <button type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> Refresh</button>
+                        </div>
+                        <div class="col-md-11">
+                            <div class="input-group">
+                                <input type="text" placeholder="Search" class="input-sm form-control"> <span class="input-group-btn">
+                                    <button type="button" class="btn btn-sm btn-default"> Go!</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-list">
+
+                        
+                        
+                               
+                          <div ng-controller="ObjectivesController">
+                                {% load djng_tags %}
+                            {% angularjs %} {% endangularjs %}
+                            <!-- 
+                              <tr>
+
+                                    <td>
+                                        <a ng-href="{{ item.initiatives_url }}">{{item.code}}</a>
+                                    </td>
+                                    <td>
+                                        <a ng-href="{{ item.initiatives_url }}">{{item.description}}</a>
+                                    </td>
+                                    
+                                    <td> <i class="fa fa-pie-chart fa-5x" aria-hidden="true"></i></td>
+                                    <td id="{{item.id}}"> </td>
+                                    <td class="project-actions">
+                                        <a ng-href="{{item.absolute_url}}" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                                        {% if user.is_superuser %}
+                                        <a ng-href="{{item.absolute_url}}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                              
+                              --> 
+                        <table>
+                            <thead class="thead-inverse table-bordered">
+                                <tr>
+                                    <th class="project-title" style="text-align:center;">
+                                        Code 
+                                    </th>
+                                    <th class="project-title" style="text-align:center;">
+                                        Strategic Objectives
+                                    </th>
+                                    
+                                    <th class="project-title" style="text-align:center;"> 
+                                        Status                                                                                   
+                                    </th>
+                                     <th class="project-title" style="text-align:center;"> 
+                                        More                                                                                  
+                                    </th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in objectives_list %}
+                                <tr>
+
+                                    <td>
+                                        <a href="{% url 'cpdashboard:objective-detail' pk=item.id %}">{{item.code}}</a>
+                                    </td>
+                                    <td >
+                                        <a href="{% url 'cpdashboard:objective-detail' pk=item.id %}">{{item.description}}</a>
+                                    </td>
+                                    
+                                     
+                                    <td id="{{item.id}}"><a href="{% url 'cpdashboard:inobjective' objective_id=item.pk %}"></a> </td>
+                                    <td class="project-actions">
+                                       <a href="{% url 'cpdashboard:inobjective' objective_id=item.pk %}" class="btn btn-success btn-sm"><i class="fa fa-folder"></i> View initiatives </a>
+                                            
+                                       
+                                       
+                                        
+                                        {% if user.is_superuser %}
+                                        <!-- <a ng-href="{{item.absolute_url}}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                            -->
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                              
+                              {% endfor %}
+                            </tbody>
+                        </table>
+
+                           
+                              
+                        </div>
+                   
+                       
+                            
+              
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+  {% endblock %}

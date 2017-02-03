@@ -1,0 +1,41 @@
+﻿{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+ <div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>This is main title</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="{% url 'cpdashboard:all-initiatives'%}">This is</a>
+            </li>
+            <li class="active">
+                <strong>Breadcrumb</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-8">
+        <div class="title-action">
+            <a href="" class="btn btn-default">This is action area</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content">
+            <div class="middle-box text-center animated fadeInRightBig">
+                <h3 class="font-bold">About us</h3>
+
+                <div class="error-desc">
+                    Execution Edge is an advisory and management consulting firm with strong capabilities and experience in the development and execution of strategy. We partner with our clients to achieve success by providing value-driven financial and enterprise transformation solutions that cut across the various facets of businesses, governments and institutions.
+                    <br /><a href="{% url 'cpdashboard:all-initiatives' %}" class="btn btn-default m-t" >Initiatives</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

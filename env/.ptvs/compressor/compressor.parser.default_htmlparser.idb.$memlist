@@ -1,0 +1,12 @@
+major
+six
+minor
+release
+DefaultHtmlParser
+ParserBase
+smart_text
+HTML_PARSER_ARGS
+CONSTRUCTOR_TAKES_CONVERT_CHARREFS
+ParserError
+sys
+CONSTRUCTOR_TAKES_STRICT

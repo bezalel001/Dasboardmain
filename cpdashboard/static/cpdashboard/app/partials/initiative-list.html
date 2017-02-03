@@ -1,0 +1,13 @@
+﻿<h2>Hello World, this is initiative list</h2>
+{% verbatim %}
+
+<div ng-controller="InitiativeListCtrl">
+    <h1>{{objective}}</h1>
+    <ul ng-repeat="initiative in initiatives">
+        <li>
+            {{initiative.description}}
+        </li>
+
+    </ul>
+ </div>
+{% endverbatim %}

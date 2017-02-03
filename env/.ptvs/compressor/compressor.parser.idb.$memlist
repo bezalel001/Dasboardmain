@@ -1,0 +1,14 @@
+lxml
+six
+HtmlParser
+default_htmlparser
+Html5LibParser
+html5lib
+ParserBase
+LxmlParser
+beautifulsoup
+BeautifulSoupParser
+AutoSelectParser
+import_module
+base
+LazyObject

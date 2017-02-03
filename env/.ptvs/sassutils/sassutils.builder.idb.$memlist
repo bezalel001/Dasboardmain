@@ -1,0 +1,12 @@
+SUFFIXES
+SUFFIX_PATTERN
+Manifest
+os
+compile
+collections
+with_statement
+build_directory
+__all__
+string_types
+io
+re

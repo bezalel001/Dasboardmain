@@ -1,0 +1,32 @@
+﻿{% extends 'base.html' %}
+{% block bootstrap %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container wrapper wrapper-content animated fadeInUp">
+    <table class="table table-striped" style="font-size: 12px;">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Code</th>
+      <th>Strategic Objective</th>
+      <th>Objective Commentatry</th>
+      <th>Objective Result</th>
+    </tr>
+  </thead>
+  <tbody style="width:100px;">
+      {% for objective in objective_list %}
+    <tr>
+      <th style="width:90px; font-size: 12px"><a href="{% url 'cpdashboard:inobjective' objective_id=objective.id %}">{{objective.code}}</a></th>
+      <td style="font-weight: 600"><a href="{% url 'cpdashboard:inobjective' objective_id=objective.id %}">{{objective.description}}</a></td>
+      <td>{{objective.objective_commentary}}</td>
+      <td>{{objective.result}}</td>
+    </tr>
+      {% endfor %}
+   
+  </tbody>
+</table>
+    </div>
+
+{% endblock %}

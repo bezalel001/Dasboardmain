@@ -1,0 +1,29 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        	<div class="panel panel-default">
+		<div class="panel-heading">	
+            <h3>{{object.description}}</h3>    			
+	  	</div>
+	  	<div class="panel-body">	  			
+	   		<form enctype="multipart/form-data" action="{% url 'cpdashboard:edit-objective' pk=object.id %}" method="post" >
+				{% csrf_token %}
+				    {% load crispy_forms_tags %}
+                    {% crispy form %}
+                   
+	    	</form>
+              
+	  	</div>
+	</div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+</div>
+
+{% endblock %}

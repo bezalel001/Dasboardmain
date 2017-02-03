@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html ng-app='cpdApp'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corporate Dashboard</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+{% load staticfiles %} 
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   
+    
+    <script src="{% static 'cpdashboard/lib/angular/js/angular.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+    
+    <script src="{% static 'cpdashboard/lib/angular/js/angular-route.js' %}"></script>
+    <script src="{% static 'cpdashboard/app/routes.js' %}"></script>
+    <!-- <script src="{% static 'cpdashboard/app/services.js' %}"></script> -->
+    <script src="{% static 'cpdashboard/app/controller.js' %}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+    
+
+    
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+     <!-- Google fonts brand-name-->
+    <link href='http://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet' type='text/css'>
+    <!-- Google fonts signup and login-->
+    <link href='http://fonts.googleapis.com/css?family=Pinyon+Script' rel='stylesheet' type='text/css'>
+   
+    <!-- Bootstrap -->
+    {% block bootstrap %}
+    <link href="{%  static 'cpdashboard/lib1/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{%  static 'cpdashboard/lib/themes/bootstrap.css' %}" rel="stylesheet">
+    {% endblock %}
+
+    <!--Font Awesome-->
+    <link href="{%  static 'cpdashboard/lib/fontawesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
+     <!-- Metis menu-->
+    <link href="{%  static 'cpdashboard/lib/metismenu/css/metismenu.min.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.6.1/metisMenu.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.6.1/metisMenu.min.css">
+
+    <!-- Jasny-bootstrap -->
+    <link href="{%  static 'cpdashboard/lib/jasny-bootstrap/css/jasny-bootstrap.min.css' %}" rel="stylesheet">
+    <link href="http://www.jasny.net/bootstrap/dist/css/jasny-bootstrap.min.css"/>
+
+     <!--Custom style sheets -->
+    <link href="{%  static 'cpdashboard/css/animate.css' %}" rel="stylesheet">
+    <link href="{%  static 'cpdashboard/css/style.css' %}" rel="stylesheet">
+    
+    
+    <!--Angularjs-->
+    
+   
+{% block css %}
+    
+{% endblock %}
+
+{% block js %}
+    
+{% endblock %}
+    
+</head>
+<body class="skin-3">
+
+   
+    <!-- Wrapper-->
+    <div id="wrapper" class="">
+
+        <!-- Navigation -->
+        {% include 'cpdashboard/navigation.html' %}
+
+        
+
+        <!-- Page wraper -->
+        <div id="page-wrapper" class="">
+
+            <!-- Top Navbar -->
+          {% include 'cpdashboard/topnavbar.html' %}
+
+            <!-- Main view  -->
+            {% block content %}
+            
+            {% endblock %}
+
+           
+
+        </div>
+        <!-- End page wrapper-->
+
+        <!-- Right Sidebar -->
+        {% include 'cpdashboard/rightnavbar.html' %}
+          
+            
+
+    </div>
+    <!-- End wrapper-->
+     
+
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="{%  static 'cpdashboard/lib1/js/jquery.min.js' %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <!--Load the AJAX API-->
+    
+
+    
+    <!--Bootstrap-->
+    <script src="{%  static 'cpdashboard/lib1/js/bootstrap.min.js' %}"></script>
+
+
+    <script src="{%  static 'cpdashboard/lib/jasny-bootstrap/js/jasny-bootstrap.min.js' %}"></script>
+      
+
+    <!--Metis menu-->
+    
+      
+    <script src="{%  static 'cpdashboard/lib/metismenu/js/metismenu.min.js' %}"></script>
+    <script src="//cdn.jsdelivr.net/jquery.metismenu/2.6.1/metisMenu.min.js"></script>
+
+    <!--Pace -->
+   <script src="{%  static 'cpdashboard/lib/pace/js/pace.min.js' %}"></script>
+
+    <!--Slim scroll-->
+   <script src="{%  static 'cpdashboard/lib/slimscroll/js/jquery.slimscroll.min.js' %}"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+
+    <!--Custom js-->
+    <script src="{%  static 'cpdashboard/js/script.js' %}"></script>
+   
+
+    
+    
+    
+
+
+    
+    
+
+    
+</body>
+</html>

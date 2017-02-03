@@ -1,0 +1,87 @@
+﻿{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="row">
+      <div class="col-sm-6">
+  <div class="card card-inverse">
+    <div class="card-header" role="tab" id="headingOne">
+      <h1 class="mb-0">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+         {{perspectives_list.0.description}}
+        </a>
+      </h1>
+    </div>
+
+    
+      <div class="card-block">
+        {% for objective in perspectives_list.0.objectives.all %}
+          <p class="card-text"><a>{{objective.description}}</a></p>
+        {% endfor %}
+      </div>
+    
+  </div>
+ </div>
+<div class="col-sm-6">
+  <div class="card card-inverse">
+    <div class="card-header" role="tab" id="headingTwo">
+      <h1 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          {{perspectives_list.1.description}}
+        </a>
+      </h1>
+    </div>
+    
+      <div class="card-block">
+        {% for objective in perspectives_list.1.objectives.all %}
+          <p class="card-text"><a>{{objective.description}}</a></p>
+        {% endfor %}
+      </div>
+   
+  </div>
+</div>
+      </div>
+
+<div class="row">
+    <div class="col-sm-6">
+  <div class="card card-inverse">
+    <div class="card-header" role="tab" id="headingThree">
+      <h1 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          {{perspectives_list.2.description}}
+        </a>
+      </h1>
+    </div>
+   
+      <div class="card-block">
+        {% for objective in perspectives_list.2.objectives.all %}
+          <p class="card-text"><a>{{objective.description}}</a></p>
+        {% endfor %}
+      </div>
+ 
+  </div>
+</div>
+   
+       
+    <div class="col-sm-6">
+    <div class="card card-inverse">
+    <div class="card-header" role="tab" id="headingThree">
+      <h1 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          {{perspectives_list.3.description}}
+        </a>
+      </h1>
+    </div>
+   
+      <div class="card-block">
+        {% for objective in perspectives_list.3.objectives.all %}
+          <p class="card-text"><a>{{objective.description}}</a></p>
+        {% endfor %}
+      </div>
+   
+  </div>
+   </div>
+      </div>
+
+{% endblock %}
+

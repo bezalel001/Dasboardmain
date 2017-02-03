@@ -1,0 +1,143 @@
+﻿{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+
+ 
+ 
+<div class="container">
+<div class="page-header">
+  <h1><a href="{% url 'cpdashboard:initiative-detail' pk=object.id %}">{{object.description}}</a> <small>{{object.objective}}</small></h1>
+</div>
+<a href="#/initiatives/dashboard/{{object.id}}">View</a>
+<div ng-view>  
+</div>
+
+<div class="row">
+<div class="col-sm-3">
+<!-- <div ng-include="'/static/cpdashboard/app/partials/initiative-detail.html'"></div> -->
+    
+</div>
+<div class="col-sm-6">
+<!-- <h2 class="center-block"><a href="{% url 'cpdashboard:initiative-detail' pk=object.id %}">{{object.description}}</a></h2> -->
+</div>
+<div class="col-sm-3"></div>
+</div>
+    <div class="row">
+    <div class="wrapper wrapper-content animated fadeInUp">
+        <div class="col-lg-12">
+    
+    <div class="col-sm-4"> 
+
+     <!-- -->
+     <div class="statistic-box">
+        
+            
+         <div ng-controller="ScheduleController" >
+             {% verbatim %}
+
+             <p><strong>Budget:</strong> {{initiative.scheduled_end_date}}</p>
+             <p><strong>Estimate:</strong> {{initiative.projected_end_date}}</p>
+             
+             {% endverbatim %}
+             <div id="shed" ></div>
+         </div>
+         </div>
+     </div>
+    
+     <div class="col-sm-4">
+     
+     <div class="statistic-box">
+        
+
+         <div ng-controller="ManhoursController" >
+         {% verbatim %}
+             <p><strong>Budget:</strong> {{initiative.budgeted_manhours}} hrs</p>
+             <p><strong>Estimate:</strong> {{initiative.projected_manhours}} hrs</p>
+             {% endverbatim %}
+             <div id="man" ></div>
+         </div>
+     </div>
+    </div>
+    
+    <div class="col-sm-4">
+    <div class="statistic-box">
+        
+
+        <div ng-controller="CostController">
+        {% verbatim %}
+             <p><strong>Budget:</strong> ${{initiative.budgeted_cost}}</p>
+             <p><strong>Estimate:</strong> ${{initiative.projected_end_cost}}</p>
+             {% endverbatim %}
+            <div id="cost"></div>
+        </div>
+        </div>
+        
+        </div>
+    
+    
+    </div>
+        </div>
+    </div>
+     
+    <div class="row">
+        <div class="wrapper wrapper-content animated fadeInUp">
+            <div class="col-lg-12">
+                <div class="col-sm-4">
+         <div class="statistic-box">
+
+        <div ng-controller="CompanyController">
+        {% verbatim %}
+             <p><strong>Budget:</strong> ${{initiative.budgeted_cost}}</p>
+             <p><strong>Estimate:</strong> ${{initiative.projected_end_cost}}</p>
+             {% endverbatim %}
+            <div id="company"></div>
+        </div>
+        </div>
+        </div>
+        
+         <div class="col-sm-4">
+         <div class="statistic-box">
+        
+
+        <div ng-controller="GanttController">
+        {% verbatim %}
+             <p><strong>Budget:</strong> ${{initiative.budgeted_cost}}</p>
+             <p><strong>Estimate:</strong> ${{initiative.projected_end_cost}}</p>
+             {% endverbatim %}
+            <div id="gantt"></div>
+        </div>
+        </div>
+        
+        </div>
+        <div class="col-sm-4">
+         
+        <div class="statistic-box">
+        <div ng-controller="ObjectiveController1">
+        {% verbatim %}
+             <p><strong>Budget:</strong> ${{initiative.budgeted_cost}}</p>
+             <p><strong>Estimate:</strong> ${{initiative.projected_end_cost}}</p>
+             {% endverbatim %}
+            <div id="pie1"></div>
+        </div>
+        </div>
+        </div>
+        </div>
+                </div>
+            </div>
+        
+    </div>
+
+
+        <script type="text/javascript">
+        	objective = {id:'{{object.id}}'}
+        </script>
+
+{% endblock %}
+
+{% block js %}
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'simple_base.html' %}
+{% block bootstrap %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"><h2>Perspective</h2></div>
+        <div class="col-md-4"><h2>Objective</h2></div>
+        <div class="col-md-4"><h2>Initiative</h2></div>
+    </div>
+
+    {% for perspective in perspectives_list %} 
+           
+    {% for objective in perspective.objectives.all %} 
+       
+    {% for initiative in objective.initiatives.all %}       
+        <div class="row">
+            <div class="col-md-4">{{perspective.description}}</div>
+            <div class="col-md-4"><a href="{% url 'cpdashboard:inobjective' objective_id=objective.id %}">{{objective.description}}</a></div>
+            <div class="col-md-4">
+                {% if initiative %}
+                {{initiative.description}}
+                {% else %}
+                <span>Nothing</span><br />
+                {% endif %}
+            </div>
+        </div>
+        
+    {% endfor %}
+        
+    {% endfor %}   
+    
+    {% endfor %}
+
+
+</div>
+
+
+  {% endblock %}

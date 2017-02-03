@@ -1,0 +1,8 @@
+OfflineGenerationError
+CompressorError
+UncompressableFileError
+TemplateSyntaxError
+FilterDoesNotExist
+TemplateDoesNotExist
+FilterError
+ParserError

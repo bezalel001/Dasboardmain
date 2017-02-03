@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app='cpdApp'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corporate Dashboard</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+{% load staticfiles %} 
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+    
+    <script src="{% static 'cpdashboard/lib/angular/js/angular.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+    <script src="{% static 'cpdashboard/lib/angular/js/angular-route.js' %}"></script>
+    <script src="{% static 'cpdashboard/app/routes.js' %}"></script>
+    <!-- <script src="{% static 'cpdashboard/app/services.js' %}"></script> -->
+    <script src="{% static 'cpdashboard/app/controller.js' %}"></script>
+
+
+     <!-- Google fonts brand-name-->
+    <link href='http://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet' type='text/css'>
+    <!-- Google fonts signup and login-->
+    <link href='http://fonts.googleapis.com/css?family=Pinyon+Script' rel='stylesheet' type='text/css'>
+   
+    <!-- Bootstrap -->
+    
+    <link href="{%  static 'cpdashboard/lib1/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{%  static 'cpdashboard/lib/themes/bootstrap.css' %}" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link href="{%  static 'cpdashboard/lib/fontawesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
+     <!-- Metis menu-->
+    <link href="{%  static 'cpdashboard/lib/metismenu/css/metismenu.min.css' %}" rel="stylesheet">
+
+    <!-- Jasny-bootstrap -->
+    <link href="{%  static 'cpdashboard/lib/jasny-bootstrap/css/jasny-bootstrap.min.css' %}" rel="stylesheet">
+
+     <!--Custom style sheets -->
+    <link href="{%  static 'cpdashboard/css/animate.css' %}" rel="stylesheet">
+    <link href="{%  static 'cpdashboard/css/style.css' %}" rel="stylesheet">
+    
+    <!--Angularjs-->
+    
+   
+
+<style type="text/css"></style>
+ 
+    
+</head>
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+        <div>
+            <div class="">
+
+                 <h1>
+                        {% load staticfiles %}
+                        <a href="http://www.executionedge.net/"><img alt="image" class=" center-block img-rounded img-responsive" src="{% static 'cpdashboard/Images/ee-logo-final.png'%}"/></a>
+
+                  </h1>
+
+            </div>
+            <h3>Register to EE Strategy Monitor</h3>
+            <p>Create account to see it in action.</p>
+            {% if warning %}
+            <div class="alert alert-danger" role="alert">
+                <strong>{{warning}}</strong> 
+            </div>
+            {% endif %}
+            <form class="m-t" role="form" action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="last_name" placeholder="Last Name" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" required="">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id= "email" name="email" placeholder="Email" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required="">
+                </div>
+                <div class="form-group">
+                    <div class="checkbox"><label> <input type="checkbox" name="checkbox"><i></i> Agree the terms and policy </label></div>
+                </div>
+                <button type="submit" class="btn btn-default block full-width m-b" style="background-color:black; color: red; font-weight: bold;">Register</button>
+
+                <p class="text-muted text-center"><small>Already have an account?</small></p>
+                <a class="btn btn-sm btn-white btn-block" href="{% url 'login' %}">Login</a>
+            </form>
+            <p class="m-t"> <small>We make strategy works for our clients &copy; 2016</small> </p>
+        </div>
+    </div>
+</body>
+</html>
